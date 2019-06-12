@@ -1,0 +1,109 @@
+test cases 1, 0 , -1, 2, 3, 4, several other primes (including both 6n+1 and 6n-1 values), several other positive non-primes, several negatives of primes, at least 1 really big prime
+
+scenario 1
+
+cpu-.1
+
+timer - 0
+Test 1 - 
+average response time-gentler climb, initial peak then small decline before steady slow increase, final-2130ms
+throughput roughly steady at 1359 requests/minute
+
+timer -250
+test 2 - 
+average response time - steep curving to shallow climb - final - 1934ms
+throughtput - roughly steady at 1333 requests/minutes
+
+timer - 500
+test 3 - 
+average response time - Same as 2, 1773ms
+throughtput - 1288 req/min
+
+cpu-.25
+
+timer - 0
+test 4
+average response time - climb less steep, 909ms
+throughtput - 3217 req/min
+
+timer - 250
+test 5
+average response time - couple of dips toward beginning of shallow climb, 646ms
+throughtput - 3276 req/min
+
+timer - 500
+test 6
+average response time - curve less smooth, more dips than 6, 409ms
+throughtput - 3244 req/min
+
+cpu-.5
+
+timer - 0
+test 7
+average response time - medium climb with mid climb plateau curving to shallow steady climb with shallow decline toward end, 414ms
+throughtput - tiny peak then gradual fall steadying early - 7073 req/min
+
+timer - 250
+test 8
+average response time - very low and flat right at the beginning, then 45 degree steep curve, smooth curve to slow shallow climb, 168ms
+throughtput - 45 degree curve shallowing when response time climbed, 7039 req/min
+
+timer - 500
+test 9
+average response time - curve much more eratic, probably dealing with requsts so quickly that with this much delay they don't build up the same, 13ms
+throughtput - curved climb - 5755 req/min
+
+
+Scenario 2
+
+cpu-.1
+
+timer - 0
+Test 1 - 
+average response time- steep climb curve to gradual, final 2153ms
+throughput roughly steady at 1364 requests/minute
+
+timer -250
+test 2 - 
+average response time - steep curving to shallow climb leveling and then very slight decline near end of test- final - 2089ms
+throughtput - roughly steady at 1372 requests/minutes
+
+timer - 500
+test 3 
+average response time - similar to above - final 2071ms
+throughtput - 1354 req/min
+
+cpu-.25
+
+timer - 0
+test 4
+average response time - steep climb curve to shallow, small dip (at loop end?) then steady shallow climb, 851ms
+throughtput - 3417 req/min
+
+timer - 250
+test 5
+average response time - steep climb curves to shallow, dip, then gradual decline, peaks round 850, final round 650ms
+throughtput - 3417 req/min
+
+timer - 500
+test 6
+average response time - steep curving to gradual incline, goes out top of graph, at some point changes to deline, ending 463ms
+throughtput - 4201 req/min
+
+cpu-.5
+
+timer - 0
+test 7
+average response time - very small low shallow start, then steeper climb, gradual curve to very shallow climb, 391ms
+throughtput - quick drop  to holding steady - 7263 req/min
+
+timer - 250
+test 8
+average response time - multiple peak climb leveling to gradual climb, easing to gradual decline(possibly at end of loop)- peak round 400, final 252ms
+throughtput - slight rises early, then slow decline, steadying round 7300 req/min
+
+timer - 500
+test 9
+average response time - similar shape to previous test, peak -400, final, 190
+throughtput - no rises, very slight decline throught, final - 6308 req/min
+

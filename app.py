@@ -24,26 +24,20 @@ def hello():
 	count = get_hit_count()
 	return 'Hello from Docker! I have been seen {} times.\n'.format(count)
 
-@app.route('/isPrimeNumber/<number>')
-def is_prime_number(number):
+@app.route('/isPrime/<number>')
+def is_prime(number):
 	# If given number is greater than 1 
 	num = int(number)
 	if num > 1: 
-		# Iterate from 2 to n / 2  
-		for i in range(2, num//2): 
-			# If number is divisible by any number between  
-			# 2 and n / 2, it is not prime  
-			if (num % i) == 0: 
-				return number+" is not prime"
-		storedPrimes = str(cache.get('prime'))
-		if "["+number+"]" not in storedPrimes:
-			cache.append('prime', "["+number+"]")
-		return number+" is prime" 
-	else: 
-		return number+" is not prime"
+		if num<4 or (num%6)-1 == 0 or (num%6)+1==6:
+			storedPrimes = str(cache.get('prime'))
+			if "["+number+"]" not in storedPrimes:
+				cache.append('prime', "["+number+"]")
+			return number+" is prime" 
+	return number+" is not prime"
 
-@app.route('/primesSaved')
-def primes_saved():
+@app.route('/primesStored')
+def primes_stored():
 	primeN=str(cache.get('prime'))
 	primeN=primeN.replace("][", ", ")
 	primeN=primeN.replace("b'[", "")
